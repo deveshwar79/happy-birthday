@@ -131,8 +131,8 @@ I made this little surprise with all my love... ❤️
 
 <div id="videoPage">
 
-<video id="video" controls playsinline>
-<source src="Video.mp4.MP4" type="video/mp4">
+<video id="video" controls playsinline preload="auto">
+    <source src="Video.mp4.MP4" type="video/mp4">
 </video>
 
 </div>
@@ -157,17 +157,21 @@ document.body.appendChild(h);
 
 }
 
-function openGift(){
+function openGift() {
 
-document.querySelector(".container").style.display="none";
+    document.querySelector(".container").style.display = "none";
 
-document.getElementById("videoPage").style.display="block";
+    document.getElementById("videoPage").style.display = "block";
 
-const video = document.getElementById("video");
+    const video = document.getElementById("video");
 
-video.load();
+    video.style.display = "block";
 
-video.play();
+    video.load();
+
+    setTimeout(() => {
+        video.play();
+    }, 300);
 
 }
 
